@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminación de Cuenta - Packify Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00A76D;
+            --primary-dark: #008F5E;
+            --secondary-color: #2D3748;
+            --light-bg: #F7FAFC;
+            --card-bg: #FFFFFF;
+            --text-color: #333333;
+            --text-light: #718096;
+            --border-color: #E2E8F0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --warning-bg: #FEF3F2;
+            --warning-border: #FDA29B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex: 1;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .page-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            color: var(--secondary-color);
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+        }
+
+        .warning-box {
+            background-color: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            border-left: 5px solid #D92D20;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .warning-box h3 {
+            color: #D92D20;
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(0, 167, 109, 0.1);
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 5px;
+            accent-color: var(--primary-color);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            background-color: #E2E8F0;
+            color: var(--secondary-color);
+            margin-top: 15px;
+        }
+
+        .btn-secondary:hover {
+            background-color: #CBD5E0;
+        }
+
+        .process-steps {
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #F0F9FF;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .process-steps h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .process-steps ol {
+            padding-left: 20px;
+        }
+
+        .process-steps li {
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .page-title {
+                font-size: 1.6rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="logo">Packify<span>Delivery</span></a>
+        </header>
+
+        <h1 class="page-title">Eliminación de Cuenta y Datos</h1>
+
+        <div class="warning-box">
+            <h3>⚠️ Importante: Esta acción es irreversible</h3>
+            <p>Al solicitar la eliminación de tu cuenta, se eliminarán permanentemente:</p>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Tu perfil de usuario y datos personales</li>
+                <li>Historial de paquetes y envíos</li>
+                <li>Preferencias y configuraciones de la aplicación</li>
+                <li>Todos los datos asociados a tu cuenta</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Solicitud de Eliminación</h2>
+            <p>Para procesar tu solicitud, necesitamos verificar tu identidad. Por favor, completa el siguiente formulario:</p>
+            
+            <form id="deletionForm">
+                <div class="form-group">
+                    <label for="userEmail">Email asociado a tu cuenta *</label>
+                    <input type="email" id="userEmail" name="email" required placeholder="ejemplo@correo.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="reason">Motivo de la eliminación (opcional)</label>
+                    <textarea id="reason" name="reason" placeholder="Comparte con nosotros tu motivo para ayudarnos a mejorar..."></textarea>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="confirmDelete" name="confirmDelete" required>
+                    <label for="confirmDelete">
+                        Entiendo que esta acción es permanente e irreversible. Confirmo que soy el titular de la cuenta y deseo proceder con la eliminación completa de todos mis datos personales almacenados por Packify Delivery.
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Enviar Solicitud de Eliminación</button>
+            </form>
+        </div>
+
+        <div class="process-steps">
+            <h3>¿Qué sucede después?</h3>
+            <ol>
+                <li>Recibirás un email de confirmación con un enlace de verificación (por seguridad)</li>
+                <li>Una vez verificada tu identidad, procesaremos tu solicitud dentro de las próximas 72 horas</li>
+                <li>Recibirás un email de confirmación cuando tu cuenta y datos hayan sido eliminados completamente</li>
+                <li>Todos los datos serán eliminados de nuestros servidores y backups dentro de los 30 días siguientes</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="index.html" class="back-link">← Volver a la Política de Privacidad</a>
+        </div>
+
+        <footer class="footer">
+            <p>© 2025 Packify Delivery. Todos los derechos reservados.</p>
+            <p>Para consultas adicionales: privacidad@packify.com</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('deletionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('userEmail').value;
+            const confirmed = document.getElementById('confirmDelete').checked;
+            
+            if (!confirmed) {
+                alert('Debes confirmar que entiendes que la eliminación es irreversible.');
+                return;
+            }
+            
+            const reason = document.getElementById('reason').value || 'No especificado';
+            const subject = encodeURIComponent(`Solicitud de Eliminación de Cuenta - ${email}`);
+            const body = encodeURIComponent(
+                `Solicito la eliminación de mi cuenta Packify Delivery.\n\n` +
+                `Email asociado: ${email}\n` +
+                `Motivo: ${reason}\n\n` +
+                `Confirmo que soy el titular de esta cuenta y autorizo la eliminación permanente de todos mis datos personales.`
+            );
+            
+            const mailtoLink = `mailto:packifydelivery@gmail.com?subject=${subject}&body=${body}`;
+            
+            alert('Tu solicitud ha sido procesada. Se abrirá tu cliente de correo para enviar la confirmación. Si no se abre, envía un email manualmente a privacidad@packify.com.');
+                
+            window.location.href = mailtoLink;
+        
+        });
+    </script>
+</body>
+</html>
