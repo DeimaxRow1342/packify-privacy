@@ -2,64 +2,307 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - Packify Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
-        h1 { color: #00A76D; text-align: center; }
-        h2 { color: #333; margin-top: 30px; }
-        .card { background: #f9f9f9; padding: 20px; margin: 20px 0; border-radius: 8px; }
-        .contact { background: #e9f7ef; padding: 15px; border-left: 4px solid #00A76D; }
+        :root {
+            --primary-color: #00A76D;
+            --primary-dark: #008F5E;
+            --secondary-color: #2D3748;
+            --light-bg: #F7FAFC;
+            --card-bg: #FFFFFF;
+            --text-color: #333333;
+            --text-light: #718096;
+            --border-color: #E2E8F0;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px rgba(0, 167, 109, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary-color);
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2:before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .card ul, .card ol {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+
+        .card li {
+            margin-bottom: 12px;
+            color: var(--text-color);
+            position: relative;
+            padding-left: 10px;
+        }
+
+        .card li:before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #E9F7EF 0%, #F0F9FF 100%);
+            border-left: 5px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+        }
+
+        .contact-item strong {
+            color: var(--secondary-color);
+            min-width: 120px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .update-date {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Política de Privacidad - Packify Delivery</h1>
-    
-    <div class="card">
-        <h2>1. Información que Recopilamos</h2>
-        <p>• Email y nombre de usuario para autenticación<br>
-           • Datos de ubicación para servicios de mapas<br>
-           • Información de paquetes (destinatario, dirección, etc.)<br>
-           • Datos de uso de la aplicación</p>
-    </div>
+    <div class="container">
+        <header class="header">
+            <div class="logo">Packify<span>Delivery</span></div>
+            <p class="subtitle">Tu solución confiable para el seguimiento de paquetes y envíos</p>
+        </header>
 
-    <div class="card">
-        <h2>2. Uso de la Información</h2>
-        <p>• Proveer el servicio de tracking de paquetes<br>
-           • Mejorar la experiencia de usuario<br>
-           • Comunicarnos con usuarios sobre sus envíos<br>
-           • Personalizar el servicio de entrega</p>
-    </div>
+        <div class="card">
+            <h2>1. Información que Recopilamos</h2>
+            <ul>
+                <li>Email y nombre de usuario para autenticación mediante Firebase Authentication</li>
+                <li>Datos de ubicación en tiempo real para servicios de mapas y seguimiento</li>
+                <li>Información de paquetes (destinatario, dirección, estado de entrega)</li>
+                <li>Datos de uso de la aplicación y preferencias del usuario</li>
+                <li>Metadatos técnicos (tipo de dispositivo, sistema operativo, versión de la app)</li>
+            </ul>
+        </div>
 
-    <div class="card">
-        <h2>3. Almacenamiento y Seguridad</h2>
-        <p>• Los datos se almacenan en Firebase (Google Cloud Platform)<br>
-           • Las contraseñas están encriptadas con SHA-256<br>
-           • Cumplimos con leyes de protección de datos internacionales<br>
-           • Los datos de ubicación se usan solo durante la sesión activa</p>
-    </div>
+        <div class="card">
+            <h2>2. Uso de la Información</h2>
+            <ul>
+                <li>Proveer el servicio de tracking de paquetes en tiempo real</li>
+                <li>Mejorar la experiencia de usuario y funcionalidades de la aplicación</li>
+                <li>Comunicarnos con usuarios sobre el estado de sus envíos</li>
+                <li>Personalizar el servicio de entrega y recomendaciones</li>
+                <li>Garantizar la seguridad de la plataforma y prevenir fraudes</li>
+            </ul>
+        </div>
 
-    <div class="card">
-        <h2>4. Compartición de Datos</h2>
-        <p>• NO compartimos datos personales con terceros<br>
-           • Los datos solo se usan para funcionalidades de la app<br>
-           • Información anónima para análisis de uso</p>
-    </div>
+        <div class="card">
+            <h2>3. Almacenamiento y Seguridad</h2>
+            <ul>
+                <li>Los datos se almacenan en Firebase (Google Cloud Platform) con encriptación en reposo</li>
+                <li>Todas las comunicaciones utilizan HTTPS con encriptación TLS 1.2+</li>
+                <li>Las contraseñas están protegidas mediante hash SHA-256</li>
+                <li>Cumplimos con normativas de protección de datos internacionales</li>
+                <li>Los datos de ubicación se retienen solo durante la sesión activa, salvo consentimiento explícito</li>
+            </ul>
+        </div>
 
-    <div class="card">
-        <h2>5. Tus Derechos</h2>
-        <p>• Acceder a tus datos personales<br>
-           • Solicitar la eliminación de tu cuenta<br>
-           • Exportar tus datos<br>
-           • Revocar permisos en cualquier momento</p>
-    </div>
+        <div class="card">
+            <h2>4. Compartición de Datos</h2>
+            <ul>
+                <li>NO compartimos datos personales identificables con terceros</li>
+                <li>Los datos solo se utilizan para funcionalidades internas de la aplicación</li>
+                <li>Información anónima y agregada para análisis de uso y mejoras</li>
+                <li>Integración con Mapbox para servicios de mapas (datos de ubicación anonimizados)</li>
+            </ul>
+        </div>
 
-    <div class="contact">
-        <h2>6. Contacto</h2>
-        <p>Para preguntas sobre privacidad:<br>
-           • Email: privacidad@packify.com<br>
-           • Universidad: UCB - Bolivia<br><br>
-           Esta política puede actualizarse. Revisa periódicamente.</p>
-        <p><strong>Última actualización: 30/01/2024</strong></p>
+        <div class="card">
+            <h2>5. Tus Derechos</h2>
+            <ul>
+                <li>Acceder y descargar tus datos personales en formato legible</li>
+                <li>Solicitar la eliminación completa de tu cuenta y datos asociados</li>
+                <li>Exportar tus datos a otro servicio mediante formatos estándar</li>
+                <li>Revocar permisos de ubicación y notificaciones en cualquier momento</li>
+                <li>Rectificar información incorrecta o desactualizada</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <h2>6. Control de Tus Datos</h2>
+            <p>Valoramos tu privacidad y te ofrecemos control total sobre tu información personal.</p>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Para eliminación de cuenta:</strong>
+                    <a href="delete-account.html" class="cta-button">Solicitar Eliminación de Datos</a>
+                </div>
+                <div class="contact-item">
+                    <strong>Consultas sobre privacidad:</strong>
+                    <span>privacidad@packify.com</span>
+                </div>
+                <div class="contact-item">
+                    <strong>Entidad responsable:</strong>
+                    <span>Universidad Católica Boliviana - Bolivia</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 0.95rem; color: var(--text-light);">
+                Esta política puede actualizarse periódicamente. Te recomendamos revisarla en cada actualización importante de la aplicación.
+            </p>
+            
+            <div style="text-align: center; margin-top: 25px;">
+                <span class="update-date">Última actualización: 30/01/2024</span>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>© 2024 Packify Delivery. Todos los derechos reservados.</p>
+            <p>Esta política de privacidad aplica exclusivamente a la aplicación Packify Delivery disponible en Google Play Store.</p>
+        </footer>
     </div>
 </body>
 </html>
